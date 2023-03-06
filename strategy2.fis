@@ -1,0 +1,46 @@
+[System]
+Name='strategy2'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=2
+NumRules=5
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='x'
+Range=[-10 10]
+NumMFs=5
+MF1='notsmall':'notsmall',[-0.416666666666667 0 0.416666666666667]
+MF2='slightlysmall':'slightlysmall',[0.0833333333333333 0.5 0.916666666666667]
+MF3='mediumsmall':'mediumsmall',[0.583333333333333 1 1.41666666666667]
+MF4='small':'small',[0 0.5 1]
+MF5='extermelysmall':'extermelysmall',[0 0.5 1]
+
+[Output1]
+Name='F1'
+Range=[-10 10]
+NumMFs=5
+MF1='f1verybig':'f1verybig',[-0.416666666666667 0 0.416666666666667]
+MF2='f1verysmall':'f1verysmall',[0.0833333333333333 0.5 0.916666666666667]
+MF3='df1big':'df1big',[0.583333333333333 1 1.41666666666667]
+MF4='df1medium':'df1medium',[0 0.5 1]
+MF5='df1small':'df1small',[0 0.5 1]
+
+[Output2]
+Name='F2'
+Range=[-10 10]
+NumMFs=2
+MF1='f2verysmall':'f2verysmall',[-0.416666666666667 0 0.416666666666667]
+MF2='f2steadystate':'f2steadystate',[0.0833333333333333 0.5 0.916666666666667]
+
+[Rules]
+2, 2 2 (1) : 1
+4, 3 2 (1) : 1
+3, 4 2 (1) : 1
+5, 5 2 (1) : 1
+1, 1 1 (1) : 1
